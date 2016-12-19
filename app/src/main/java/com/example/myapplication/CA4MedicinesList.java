@@ -16,7 +16,7 @@ public class CA4MedicinesList extends Activity {
 
     DBMeds medi = new DBMeds(this);
     TextView mediList;
-    ListView lvMeds; // do wyświetlania listy leków, na razie nie używane
+    ListView lvMeds; // do wyświetlania listy leków
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +58,4 @@ public class CA4MedicinesList extends Activity {
             }
         });
     }
-
-    @Override
-    public void onBackPressed(){ //żeby po kliknięciu "wstecz" nie zapętlało, tylko wróciło do CA3Hello
-        Intent intent = new Intent(CA4MedicinesList.this, CA3Hello.class);
-        startActivity(intent);
-    }
-
 }

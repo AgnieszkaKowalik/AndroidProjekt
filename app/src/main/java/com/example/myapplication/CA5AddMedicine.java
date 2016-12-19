@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -10,10 +11,8 @@ import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TimePicker;
@@ -32,6 +31,7 @@ public class CA5AddMedicine extends Activity {
     String hour, minute, meal;
     ListView lv;
     String[] mealArray = new String[] {"przed posiłkiem", "w trakcie posiłku", "po posiłku"};
+    PendingIntent pendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,7 @@ public class CA5AddMedicine extends Activity {
 
         final Calendar calendar = Calendar.getInstance();
 
+        final Intent my_intent = new Intent(this.context, Alarm.class);
         send.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.M)
             @Override
@@ -89,17 +90,13 @@ public class CA5AddMedicine extends Activity {
                 Toast.makeText(getApplicationContext(),
                         "Zapisano!", Toast.LENGTH_SHORT).show();
 
-                startActivity(new Intent(CA5AddMedicine.this, CA3Hello.class));
+                // ustawianie powiadomienia dla leku
+                pendingIntent = PendingIntent.getBroadcast(CA5AddMedicine.this, 0, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+
+                finish();
             }
         });
 
     }
-
-    @Override
-    public void onBackPressed(){  //żeby po kliknięciu "wstecz" nie zapętlało, tylko wróciło do CA3Hello
-        Intent intent = new Intent(CA5AddMedicine.this, CA3Hello.class);
-        startActivity(intent);
-    }
-
-
 }

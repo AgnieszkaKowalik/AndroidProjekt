@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
 public class CA8ShowMedicine extends Activity {
 
     final Context context = this;
@@ -18,6 +16,7 @@ public class CA8ShowMedicine extends Activity {
     TextView tvMedName, tvMedHours, tvMedAddInfo;
     Button bEdit, bDelete, bCancel;
     String[] mealArray = new String[] {"przed posiłkiem", "w trakcie posiłku", "po posiłku"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

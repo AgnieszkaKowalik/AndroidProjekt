@@ -9,13 +9,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.myapplication.DayPlans">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Tu bedzie lista leków na dzis..."
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="69dp" />
+
 </RelativeLayout>

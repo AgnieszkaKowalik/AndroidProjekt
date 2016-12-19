@@ -66,6 +66,7 @@
         <activity android:name=".CA7ChangeAccountInformations" />
         <activity android:name=".CA8ShowMedicine" />
         <activity android:name=".CA9Edit"></activity>
+        <receiver android:name="Alarm"></receiver>
     </application>
 
 </manifest>

@@ -4,7 +4,6 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -50,7 +49,7 @@ public class CA3Hello extends Activity {
         noti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CA3Hello.this,CA6NotificationSettings.class);
+                Intent intent = new Intent(CA3Hello.this, CA6NotificationSettings.class);
                 startActivity(intent);
             }
         });
@@ -61,13 +60,5 @@ public class CA3Hello extends Activity {
                 startActivity(intent);
             }
         });
-
     }
-
-    @Override
-    public void onBackPressed(){ //żeby po kliknięciu "wstecz" nie zapętlało, tylko wróciło do CaregiverAccount
-        Intent intent = new Intent(CA3Hello.this, CaregiverAccount.class);
-        startActivity(intent);
-    }
-
 }
