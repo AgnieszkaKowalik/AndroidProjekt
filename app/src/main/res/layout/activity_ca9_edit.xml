@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Nazwa leku"
+                android:text="@string/nazwa_lek"
                 android:id="@+id/TVname" />
 
             <EditText
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Godzina przyjmowania leku"
+                android:text="@string/godzina_przyjmowania_leku"
                 android:id="@+id/TVhour" />
 
             <TimePicker
@@ -58,7 +58,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Zapisz"
+                android:text="@string/zapisz"
                 android:id="@+id/Send"
                 android:layout_marginTop="24dp" />
 

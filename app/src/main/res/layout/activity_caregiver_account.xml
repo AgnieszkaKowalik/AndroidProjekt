@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Nazwa użytkownika:"
+        android:text="@string/nazwa_u_ytkownika"
         android:id="@+id/TVusername"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hasło:"
+        android:text="@string/has_o"
         android:id="@+id/TVpassword"
         android:layout_below="@+id/ETusername"
         android:layout_centerHorizontal="true" />
@@ -48,7 +48,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ZALOGUJ"
+        android:text="@string/zaloguj"
         android:id="@+id/ButLogIn"
         android:textSize="25sp"
         android:layout_centerVertical="true"
@@ -57,7 +57,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Utwórz nowe konto"
+        android:text="@string/utw_rz_nowe_konto"
         android:id="@+id/ButSetAccount"
         android:layout_below="@+id/ButLogIn"
         android:layout_centerHorizontal="true"
