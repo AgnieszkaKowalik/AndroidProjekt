@@ -45,7 +45,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/kalendarz2"
+        android:text="@string/kalendarz"
         android:id="@+id/calendar"
         android:textSize="30sp"
         android:layout_below="@+id/today"

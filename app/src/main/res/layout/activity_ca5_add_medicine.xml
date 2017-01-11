@@ -60,7 +60,7 @@ trzeba było dodawać osobno tego samego leku o różnych godzinach. Można też
                 <Button
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="@string/zapis"
+                 android:text="@string/zapisz"
                  android:id="@+id/Send"
                  android:layout_marginTop="24dp" />
 
