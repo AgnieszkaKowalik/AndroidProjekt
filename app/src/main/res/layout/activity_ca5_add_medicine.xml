@@ -39,7 +39,7 @@ trzeba było dodawać osobno tego samego leku o różnych godzinach. Można też
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Godzina przyjmowania leku"
+                android:text="@string/godzina_przyjmowania_leku"
                 android:id="@+id/TVhour" />
 
             <TimePicker
@@ -60,7 +60,7 @@ trzeba było dodawać osobno tego samego leku o różnych godzinach. Można też
                 <Button
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="Zapisz"
+                 android:text="@string/zapis"
                  android:id="@+id/Send"
                  android:layout_marginTop="24dp" />
 

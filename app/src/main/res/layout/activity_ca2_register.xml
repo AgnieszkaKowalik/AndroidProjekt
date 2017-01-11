@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/wprowad_imi"
+        android:text="@string/wprowadz_imie"
         android:id="@+id/TvReg1_name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/wprowad_numer_telefonu"
+        android:text="@string/wprowadz_numer_telefonu"
         android:id="@+id/TvReg2_tel"
         android:layout_below="@+id/et1_name"
         android:layout_centerHorizontal="true" />
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/podaj_nazw_u_ytkownika"
+        android:text="@string/podaj_nazwe_uzytkownika"
         android:id="@+id/TvReg3_username"
         android:layout_below="@+id/et2_tel"
         android:layout_centerHorizontal="true" />
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/podaj_has_o"
+        android:text="@string/podaj_haslo"
         android:id="@+id/TvReg4_password"
         android:layout_below="@+id/et3_username"
         android:layout_centerHorizontal="true" />
@@ -82,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/potwierd_has_o"
+        android:text="@string/potwierdz_haslo"
         android:id="@+id/TvReg5_confPass"
         android:layout_below="@+id/et4_pass"
         android:layout_centerHorizontal="true" />
@@ -100,7 +100,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/wr_do_logowania"
+        android:text="@string/powrot_do_logowania"
         android:id="@+id/BReg2_Back"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"

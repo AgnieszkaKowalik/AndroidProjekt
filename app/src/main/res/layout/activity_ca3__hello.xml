@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/co_chcia_by_zrobic"
+        android:text="@string/co_chcial_bys_zrobic"
         android:id="@+id/TVwhat"
         android:textSize="18sp"
         android:layout_below="@+id/TVhello"
@@ -60,7 +60,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sprawd_list_lek_w"
+        android:text="@string/sprawdz_liste_lekow"
         android:id="@+id/Check"
         android:textSize="22sp"
         android:layout_marginTop="89dp"
@@ -81,7 +81,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ustawienia_powiadomie"
+        android:text="@string/ustawienia_powiadomien"
         android:id="@+id/Alarms"
         android:textSize="22sp"
         android:layout_below="@+id/Add"
@@ -91,7 +91,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/zmie_swoje_dane"
+        android:text="@string/zmien_swoje_dane"
         android:id="@+id/Data"
         android:textSize="22sp"
         android:layout_below="@+id/Alarms"

@@ -12,7 +12,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WERSJA JĘZYKOWA"
+        android:text="@string/wersja_jezykowa"
         android:id="@+id/LanguageVer"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -21,7 +21,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="WYGLĄD"
+        android:text="@string/wyglad"
         android:id="@+id/Look"
         android:layout_below="@+id/LanguageVer"
         android:layout_alignParentLeft="true"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="USTAWIENIA"
+        android:text="@string/ustawienia"
         android:id="@+id/Settings"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
