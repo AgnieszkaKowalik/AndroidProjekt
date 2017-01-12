@@ -7,13 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.myapplication.CA3Hello">
+    tools:context=".CaregiverHello">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Witaj "
+        android:text="@string/witaj"
         android:id="@+id/TVhello"
         android:textSize="25sp"
         android:layout_marginLeft="52dp"
@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="co chciałbyś zrobic?"
+        android:text="@string/co_chcial_bys_zrobic"
         android:id="@+id/TVwhat"
         android:textSize="18sp"
         android:layout_below="@+id/TVhello"
@@ -52,11 +52,7 @@
         android:fillViewport="false">
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-
-
-
+            android:layout_height="wrap_content">
         </LinearLayout>
 
     </ScrollView>
@@ -64,7 +60,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sprawdź listę leków"
+        android:text="@string/sprawdz_liste_lekow"
         android:id="@+id/Check"
         android:textSize="22sp"
         android:layout_marginTop="89dp"
@@ -75,7 +71,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dodaj lek"
+        android:text="@string/dodaj_lek"
         android:id="@+id/Add"
         android:textSize="22sp"
         android:layout_below="@+id/Check"
@@ -85,23 +81,12 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Ustawienia powiadomień"
+        android:text="@string/ustawienia_powiadomien"
         android:id="@+id/Alarms"
         android:textSize="22sp"
         android:layout_below="@+id/Add"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Zmień swoje dane"
-        android:id="@+id/Data"
-        android:textSize="22sp"
-        android:layout_below="@+id/Alarms"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
 
 
 </RelativeLayout>

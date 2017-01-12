@@ -12,14 +12,22 @@ import android.widget.Toast;
 public class CaregiverAccount extends Activity {
 
     Button ButSetAccount,ButLogIn;
-    DatabaseHelper helper = new DatabaseHelper(this);
+    ContactsDatabase helper = new ContactsDatabase(this);
 
-    public void init() {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_caregiver_account);
+        init();
+    }
+
+    private void init() {
         ButSetAccount = (Button)findViewById(R.id.ButSetAccount);
         ButSetAccount.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(CaregiverAccount.this,CA2Register.class);
+                Intent intent = new Intent(CaregiverAccount.this,CaregiverRegister.class);
                 startActivity(intent);
             }
         });
@@ -33,30 +41,16 @@ public class CaregiverAccount extends Activity {
                 String pass = b.getText().toString();
 
                 String password = helper.searchPass(str);
-                if(pass.equals(password)){
-
-                    Intent intent = new Intent(CaregiverAccount.this,CA3Hello.class);
-                    intent.putExtra("Username",str);  //wysyła nazwę uzytkownika do CA3Hello, gdzie jest wywołane "Username" przez putExtra
+                if (pass.equals(password)) {
+                    Intent intent = new Intent(CaregiverAccount.this, CaregiverHello.class);
+                    intent.putExtra("Username",str); //wysyła nazwę uzytkownika do CaregiverHello, gdzie jest wywołane "Username" przez putExtra
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast temp = Toast.makeText(CaregiverAccount.this, "Błędne hasło", Toast.LENGTH_SHORT);
                     temp.show();
                 }
             }
         });
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //żeby nie było paska w nagłówku - do tego na początku jest extends Activity a nie AppCompatActivity
-        setContentView(R.layout.activity_caregiver_account);
-        init();
-    }
-
-    @Override
-    public void onBackPressed(){ //żeby po kliknięciu "wstecz" nie zapętlało, tylko wróciło do MainActivity
-        Intent intent = new Intent(CaregiverAccount.this, MainActivity.class);
-        startActivity(intent);
     }
 }

@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import java.util.List;
+
 /**
  * Created by Agata on 2016-11-12.
  */
@@ -8,10 +10,9 @@ public class Medicament {
     private Long id;
     private String name, hour, meal;
 
-    // poszczególne pola klasy Medicament - gettery i settery (pozwalają na dostęp do prywatnych pól klasy Medicament);
-    // większa kontrola nad polami klasy
-    // UWAGA: aby wygenerować gettery i settery - prawy przycisk mysz -> generate -> getter and setter -> zaznaczyć wszystkie zmienne i po sprawie
-    // nie trzeba pisać wszystkiego ręcznie
+    // poszczególne gettery i settery (pozwalają na dostęp do prywatnych pól klasy Medicament);
+    // UWAGA: aby wygenerować gettery i settery - prawy przycisk mysz -> generate -> getter and
+    // setter -> zaznaczyć wszystkie zmienne i po sprawie
 
     public Long getId() {
         return id;
@@ -43,6 +44,24 @@ public class Medicament {
 
     public void setMeal(String meal) {
         this.meal = meal;
+    }
+
+
+    // find medicament by id
+
+    public static Medicament findMedicamentById (String medId, MedsDatabase medi) {
+        List<Medicament> meds = medi.getAllMeds();
+        int i = 0;
+        Medicament searchedMedicament = null;
+        for (Medicament m : meds) {
+            String id = m.getId().toString();
+            {
+                if (id.equals(medId)) {
+                    searchedMedicament = m;
+                }
+            }
+        }
+        return searchedMedicament;
     }
 
 }

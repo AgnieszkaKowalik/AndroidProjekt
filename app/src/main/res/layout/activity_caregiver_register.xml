@@ -8,13 +8,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.myapplication.CA2Register">
+    tools:context=".CaregiverRegister">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Wprowadź imię:"
+        android:text="@string/wprowadz_imie"
         android:id="@+id/TvReg1_name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Wprowadź numer telefonu"
+        android:text="@string/wprowadz_numer_telefonu"
         android:id="@+id/TvReg2_tel"
         android:layout_below="@+id/et1_name"
         android:layout_centerHorizontal="true" />
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Podaj nazwę użytkownika:"
+        android:text="@string/podaj_nazwe_uzytkownika"
         android:id="@+id/TvReg3_username"
         android:layout_below="@+id/et2_tel"
         android:layout_centerHorizontal="true" />
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Podaj hasło:"
+        android:text="@string/podaj_haslo"
         android:id="@+id/TvReg4_password"
         android:layout_below="@+id/et3_username"
         android:layout_centerHorizontal="true" />
@@ -82,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Potwierdź hasło:"
+        android:text="@string/potwierdz_haslo"
         android:id="@+id/TvReg5_confPass"
         android:layout_below="@+id/et4_pass"
         android:layout_centerHorizontal="true" />
@@ -100,19 +100,21 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wróć do logowania"
+        android:text="@string/powrot_do_logowania"
         android:id="@+id/BReg2_Back"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="backToLoginOnClick"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ZAREJESTRUJ"
+        android:text="@string/zarejestruj"
         android:id="@+id/BReg1_Reg"
         android:textSize="25sp"
         android:layout_above="@+id/BReg2_Back"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="registerOnClick"/>
 
 </RelativeLayout>

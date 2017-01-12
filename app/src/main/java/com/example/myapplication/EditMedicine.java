@@ -1,29 +1,27 @@
 package com.example.myapplication;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.AlarmManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.View;
-import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.List;
 
-public class CA5AddMedicine extends Activity {
+public class EditMedicine extends AppCompatActivity {
 
-    DBMeds medi = new DBMeds(this);
+    MedsDatabase medi = new MedsDatabase(this);
     Button send;
     EditText name;
     TimePicker time;
@@ -36,8 +34,8 @@ public class CA5AddMedicine extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //żeby nie było paska w nagłówku - do tego na początku jest extends Activity a nie AppCompatActivity
-        setContentView(R.layout.activity_ca5_add_medicine);
+        setContentView(R.layout.activity_edit_medicine);
+
         this.context = this;
 
         am = (AlarmManager) getSystemService(ALARM_SERVICE);
@@ -68,7 +66,7 @@ public class CA5AddMedicine extends Activity {
                 hour = time.getCurrentHour().toString();
                 minute = time.getCurrentMinute().toString();
 
-                if (time.getCurrentMinute()<10) {
+                if (time.getCurrentMinute() < 10) {
                     minute = "0" + time.getCurrentMinute().toString();
                 }
 
@@ -79,27 +77,20 @@ public class CA5AddMedicine extends Activity {
                     }
                 }
 
-                // dodawanie nowego leku do bazy
-                Medicament newMed = new Medicament();
-                newMed.setName(name.getText().toString());
-                newMed.setHour(hour + ":" + minute);
-                newMed.setMeal(meal);
-                medi.insertMed(newMed);
+                //edycja leku
+                String MedId = getIntent().getExtras().getString("chosenId");
+                Medicament medicament = Medicament.findMedicamentById(MedId, medi);
+                medicament.setName(name.getText().toString());
+                medicament.setHour(hour + ":" + minute);
+                medicament.setMeal(meal);
+                medi.updateMed(medicament);
 
                 Toast.makeText(getApplicationContext(),
-                        "Zapisano!", Toast.LENGTH_SHORT).show();
+                        "Zaktualizowano", Toast.LENGTH_SHORT).show();
 
-                startActivity(new Intent(CA5AddMedicine.this, CA3Hello.class));
+                startActivity(new Intent(EditMedicine.this, MedicinesList.class));
             }
         });
 
     }
-
-    @Override
-    public void onBackPressed(){  //żeby po kliknięciu "wstecz" nie zapętlało, tylko wróciło do CA3Hello
-        Intent intent = new Intent(CA5AddMedicine.this, CA3Hello.class);
-        startActivity(intent);
-    }
-
-
 }

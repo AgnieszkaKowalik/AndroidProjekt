@@ -29,16 +29,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CalendarView"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".Settings"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
@@ -58,14 +48,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".CA2Register" />
-        <activity android:name=".CA3Hello" />
-        <activity android:name=".CA4MedicinesList" />
-        <activity android:name=".CA5AddMedicine" />
-        <activity android:name=".CA6NotificationSettings" />
-        <activity android:name=".CA7ChangeAccountInformations" />
-        <activity android:name=".CA8ShowMedicine" />
-        <activity android:name=".CA9Edit"></activity>
+        <activity android:name=".CaregiverRegister" />
+        <activity android:name=".CaregiverHello" />
+        <activity android:name=".MedicinesList" />
+        <activity android:name=".AddMedicine" />
+        <activity android:name=".NotificationSettings" />
+        <activity android:name=".ShowMedicine" />
+        <activity android:name=".EditMedicine"></activity>
+        <receiver android:name="Alarm"></receiver>
     </application>
 
 </manifest>

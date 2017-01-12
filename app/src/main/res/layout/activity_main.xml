@@ -14,7 +14,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:id="@+id/imageView"
-        android:contentDescription="image1"
+        android:contentDescription="@string/image1"
         android:src="@mipmap/ic_launcher"
         android:layout_below="@+id/textView5"
         android:layout_centerHorizontal="true" />
@@ -22,7 +22,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LEKI NA DZIŚ"
+        android:text="@string/leki_na_dzis"
         android:id="@+id/today"
         android:contextClickable="false"
         android:elegantTextHeight="false"
@@ -36,7 +36,7 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Konto opiekuna"
+        android:text="@string/konto_opiekuna"
         android:id="@+id/user_guardian"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/today"
@@ -45,8 +45,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="KALENDARZ"
-        android:id="@+id/calendar"
+        android:text="@string/lista_lekow"
+        android:id="@+id/lista"
         android:textSize="30sp"
         android:layout_below="@+id/today"
         android:layout_alignRight="@+id/user_guardian"
@@ -55,30 +55,19 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="USTAWIENIA"
+        android:text="@string/ustawienia"
         android:id="@+id/settings"
         android:textSize="30sp"
-        android:layout_below="@+id/calendar"
+        android:layout_below="@+id/lista"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/exit"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@android:drawable/ic_delete"
-        android:contentDescription="exit"
-        android:onClick="clickExit"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Twój Farmaceutyczny Pomocnik"
+        android:text="@string/nazwa_applikacji"
         android:id="@+id/textView5"
         android:textSize="20sp"
         android:textColor="#606060"

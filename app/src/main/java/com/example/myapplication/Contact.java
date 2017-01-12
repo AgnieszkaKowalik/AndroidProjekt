@@ -5,7 +5,7 @@ package com.example.myapplication;
 public class Contact {
 
     String name, phone, uname, password;
-//utworzenie metod dla każdej zmiennej - aby móc w odpowiednim miejscu je wywoływać lub zapisywać
+//utworzenie setterów i getterów dla każdej zmiennej - aby móc w odpowiednim miejscu je wywoływać lub zapisywać
 //id jest nie potrzebne bo zawiera auto_increment
 
     public void setName(String name){

@@ -3,20 +3,20 @@ package com.example.myapplication;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-    public Button today, user_guardian, calendar, settings;
+    public Button today, user_guardian, list, settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //żeby nie było paska w nagłówku - do tego na początku jest extends Activity a nie AppCompatActivity
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         init(); //wywołanie klasy init, która odpowiada za przejście do kolejnych aktywności po kliknięciu przycisku
     }
@@ -26,15 +26,15 @@ public class MainActivity extends Activity {
         today.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,DayPlans.class);
+                Intent intent = new Intent(MainActivity.this, DayPlans.class);
                 startActivity(intent);
             }
         });
-        calendar = (Button)findViewById(R.id.calendar); //przycisk "Kalendarz"
-        calendar.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
+        list = (Button)findViewById(R.id.lista); //przycisk "Lista Leków"
+        list.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,CalendarView.class);
+                Intent intent = new Intent(MainActivity.this, MedicinesList.class);
                 startActivity(intent);
             }
         });
@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
         settings.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,Settings.class);
+                Intent intent = new Intent(MainActivity.this, Settings.class);
                 startActivity(intent);
             }
         });
@@ -50,15 +50,10 @@ public class MainActivity extends Activity {
         user_guardian.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,CaregiverAccount.class);
+                Intent intent = new Intent(MainActivity.this, CaregiverAccount.class);
                 startActivity(intent);
             }
         });
-    }
-
-
-    public void clickExit(View v) {
-        finish(); //zamyka aplikację po kliknięciu na przycisk exit
     }
 
     @Override
@@ -70,7 +65,7 @@ public class MainActivity extends Activity {
         builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                finish();
+                MainActivity.super.onBackPressed();
             }
         });
         builder.setNegativeButton("Nie", new DialogInterface.OnClickListener() {
@@ -82,7 +77,4 @@ public class MainActivity extends Activity {
         AlertDialog alert = builder.create();
         alert.show();
     }
-
-
-
 }
