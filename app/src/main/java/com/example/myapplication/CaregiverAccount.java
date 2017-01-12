@@ -12,12 +12,12 @@ import android.widget.Toast;
 public class CaregiverAccount extends Activity {
 
     Button ButSetAccount,ButLogIn;
-    DatabaseHelper helper = new DatabaseHelper(this);
+    ContactsDatabase helper = new ContactsDatabase(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //żeby nie było paska w nagłówku - do tego na początku jest extends Activity a nie AppCompatActivity
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_caregiver_account);
         init();
     }
@@ -27,7 +27,7 @@ public class CaregiverAccount extends Activity {
         ButSetAccount.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(CaregiverAccount.this,CA2Register.class);
+                Intent intent = new Intent(CaregiverAccount.this,CaregiverRegister.class);
                 startActivity(intent);
             }
         });
@@ -42,8 +42,8 @@ public class CaregiverAccount extends Activity {
 
                 String password = helper.searchPass(str);
                 if (pass.equals(password)) {
-                    Intent intent = new Intent(CaregiverAccount.this, CA3Hello.class);
-                    intent.putExtra("Username",str);  //wysyła nazwę uzytkownika do CA3Hello, gdzie jest wywołane "Username" przez putExtra
+                    Intent intent = new Intent(CaregiverAccount.this, CaregiverHello.class);
+                    intent.putExtra("Username",str); //wysyła nazwę uzytkownika do CaregiverHello, gdzie jest wywołane "Username" przez putExtra
                     startActivity(intent);
                     finish();
                 } else {

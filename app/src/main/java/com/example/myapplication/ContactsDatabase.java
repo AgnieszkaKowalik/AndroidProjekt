@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -10,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by Agata on 2016-11-11.
  */
-public class DatabaseHelper extends SQLiteOpenHelper{
+public class ContactsDatabase extends SQLiteOpenHelper{
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "contacts.db";
@@ -24,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     private static final String TABLE_CREATE = ("create table "+TABLE_NAME+" (id integer primary key not null, "+
         "name text not null, phone integer not null, username text not null, password text not null)");
 
-    public DatabaseHelper(Context context){ //nazwa klasy taka sama jak wyżej
+    public ContactsDatabase(Context context){
         super(context , DATABASE_NAME , null , DATABASE_VERSION);
     }
 

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Wraz z rozwojem projektu można będzie tu dodać "ile razy na dobę" albo "dodaj kolejne pole", żeby nie
+trzeba było dodawać osobno tego samego leku o różnych godzinach. Można też dodać dodatkowe elementy takie jak zdjęcie opakowania-->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,7 +11,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.example.myapplication.CA5AddMedicine">
+    tools:context=".AddMedicine">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -55,13 +57,13 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/zapisz"
-                android:id="@+id/Send"
-                android:layout_marginTop="24dp" />
+                <Button
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:text="@string/zapisz"
+                 android:id="@+id/Send"
+                 android:layout_marginTop="24dp" />
 
-        </LinearLayout>
-    </ScrollView>
+                    </LinearLayout>
+                </ScrollView>
 </LinearLayout>

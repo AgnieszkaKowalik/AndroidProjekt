@@ -8,7 +8,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.view.View;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
 /**
  * Created by Agata on 2016-11-12.
  */
-public class DBMeds extends SQLiteOpenHelper {
+public class MedsDatabase extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "medicaments.db";
     private static final String TABLE_NAME = "medicaments";
@@ -28,7 +27,7 @@ public class DBMeds extends SQLiteOpenHelper {
 
     SQLiteDatabase db;
 
-    public DBMeds(Context context){ //nazwa klasy taka sama jak wyżej
+    public MedsDatabase(Context context){ //nazwa klasy taka sama jak wyżej
         super(context,DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -79,28 +78,7 @@ public class DBMeds extends SQLiteOpenHelper {
         }
         return meds; // zwracanie listy leków
     }
-/*
-    // metoda dajMed - pozwala na wyświetlanie konkretnego rekordu z bazy danych
-    public Medicament getMed(int nr){
-        Medicament med = new Medicament();
-        SQLiteDatabase db = getReadableDatabase();
-        String[] columns={COLUMN_NAME,COLUMN_HOUR,COLUMN_MEAL};
-        String args[]={nr+""}; // podstawienie wartości która trafi pod znak „?” w warunku where
 
-        Cursor cursor=db.query(TABLE_NAME,columns,"id=?",args,null,null,null,null); // wykonanie zapytania
-        if(cursor!=null){ //sprawdzenie, czy zwrócony zostanie przynajmniej jeden wiersz
-            // czytanie danych z pól wiersza i uzupełniania obiektu
-            cursor.moveToFirst(); // przejście do pierwszego wiersza
-            med.setId(cursor.getLong(0)); // uzupełnianie pól obiektu med
-            med.setName(cursor.getString(1));
-            med.setHour(cursor.getString(2));
-            med.setMeal(cursor.getString(3));
-        }
-        return med; // zwracanie uzupełnionego obiektu
-    } */
-
-
-    // Niestety to co wyżej getMed coś nie chce działać, więc są osobne metody do pobierania konretnej wartości
     public String getMedName(int i){
         db=this.getReadableDatabase();
         String query = "select "+ COLUMN_NAME + " from "+TABLE_NAME + " where id=" + i;
@@ -148,14 +126,14 @@ public class DBMeds extends SQLiteOpenHelper {
         db.execSQL("VACUUM");
     }
 
-    //edycja leku - Niby działa, ale nie działą :(
+    //edycja leku
     public void updateMed(Medicament med){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
 
         values.put(COLUMN_NAME, med.getName());
         values.put(COLUMN_HOUR, med.getHour());
-        //values.put(COLUMN_MEAL, med.getMeal());
+        values.put(COLUMN_MEAL, med.getMeal());
 
         String args[]={""+med.getId()};
         db.update(TABLE_NAME, values,"id=?", args);

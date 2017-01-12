@@ -1,14 +1,16 @@
 package com.example.myapplication;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,9 +20,9 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class CA9Edit extends AppCompatActivity {
+public class AddMedicine extends Activity {
 
-    DBMeds medi = new DBMeds(this);
+    MedsDatabase medi = new MedsDatabase(this);
     Button send;
     EditText name;
     TimePicker time;
@@ -29,12 +31,13 @@ public class CA9Edit extends AppCompatActivity {
     String hour, minute, meal;
     ListView lv;
     String[] mealArray = new String[] {"przed posiłkiem", "w trakcie posiłku", "po posiłku"};
+    PendingIntent pendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ca9_edit);
-
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_add_medicine);
         this.context = this;
 
         am = (AlarmManager) getSystemService(ALARM_SERVICE);
@@ -53,6 +56,7 @@ public class CA9Edit extends AppCompatActivity {
 
         final Calendar calendar = Calendar.getInstance();
 
+        final Intent my_intent = new Intent(this.context, Alarm.class);
         send.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.M)
             @Override
@@ -76,17 +80,21 @@ public class CA9Edit extends AppCompatActivity {
                     }
                 }
 
-                //edycja leku
-                Medicament medicament = new Medicament();
-                medicament.setName(name.getText().toString());
-                medicament.setHour(hour + ":" + minute);
-                medicament.setMeal(meal);
-                medi.updateMed(medicament);
+                // dodawanie nowego leku do bazy
+                Medicament newMed = new Medicament();
+                newMed.setName(name.getText().toString());
+                newMed.setHour(hour + ":" + minute);
+                newMed.setMeal(meal);
+                medi.insertMed(newMed);
 
                 Toast.makeText(getApplicationContext(),
-                        "Zaktualizowano", Toast.LENGTH_SHORT).show();
+                        "Zapisano!", Toast.LENGTH_SHORT).show();
 
-                startActivity(new Intent(CA9Edit.this, CA4MedicinesList.class));
+                // ustawianie powiadomienia dla leku
+                pendingIntent = PendingIntent.getBroadcast(AddMedicine.this, 0, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+
+                finish();
             }
         });
 

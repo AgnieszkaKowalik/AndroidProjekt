@@ -13,15 +13,15 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class CA2Register extends Activity {
+public class CaregiverRegister extends Activity {
 
-    DatabaseHelper helper = new DatabaseHelper(this);
+    ContactsDatabase helper = new ContactsDatabase(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //żeby nie było paska w nagłówku - do tego na początku jest extends Activity a nie AppCompatActivity
-        setContentView(R.layout.activity_ca2_register);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_caregiver_register);
     }
 
     public void backToLoginOnClick(View view) {

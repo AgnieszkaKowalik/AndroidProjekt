@@ -8,10 +8,9 @@ public class Medicament {
     private Long id;
     private String name, hour, meal;
 
-    // poszczególne pola klasy Medicament - gettery i settery (pozwalają na dostęp do prywatnych pól klasy Medicament);
-    // większa kontrola nad polami klasy
-    // UWAGA: aby wygenerować gettery i settery - prawy przycisk mysz -> generate -> getter and setter -> zaznaczyć wszystkie zmienne i po sprawie
-    // nie trzeba pisać wszystkiego ręcznie
+    // poszczególne gettery i settery (pozwalają na dostęp do prywatnych pól klasy Medicament);
+    // UWAGA: aby wygenerować gettery i settery - prawy przycisk mysz -> generate -> getter and
+    // setter -> zaznaczyć wszystkie zmienne i po sprawie
 
     public Long getId() {
         return id;
