@@ -28,9 +28,9 @@ public class AddMedicine extends Activity {
     TimePicker time;
     Context context;
     AlarmManager am;
-    String hour, minute, meal;
+    //String hour, minute, meal;
     ListView lv;
-    String[] mealArray = new String[] {"przed posiłkiem", "w trakcie posiłku", "po posiłku"};
+    String[] mealArray = new String[] {getString(R.string.przed),getString(R.string.wtrakcie), getString(R.string.po_posilku)};
     PendingIntent pendingIntent;
 
     @Override
@@ -88,7 +88,7 @@ public class AddMedicine extends Activity {
                 medi.insertMed(newMed);
 
                 Toast.makeText(getApplicationContext(),
-                        "Zapisano!", Toast.LENGTH_SHORT).show();
+                        R.string.zapisano, Toast.LENGTH_SHORT).show();
 
                 // ustawianie powiadomienia dla leku
                 pendingIntent = PendingIntent.getBroadcast(AddMedicine.this, 0, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);

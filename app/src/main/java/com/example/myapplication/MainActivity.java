@@ -60,15 +60,15 @@ public class MainActivity extends Activity {
     public void onBackPressed() {
         //po kliknięciu przyciusku "wstecz" wyświetla komunikat "Czy na pewno chcesz zamknąć aplikację?"
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setMessage("Czy na pewno chcesz wyjść?");
+        builder.setMessage(getString(R.string.czy_chcesz_wyjsc));
         builder.setCancelable(true);
-        builder.setPositiveButton("Tak", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.tak), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 MainActivity.super.onBackPressed();
             }
         });
-        builder.setNegativeButton("Nie", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.nie), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 dialog.cancel();

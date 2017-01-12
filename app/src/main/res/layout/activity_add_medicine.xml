@@ -27,18 +27,21 @@ trzeba było dodawać osobno tego samego leku o różnych godzinach. Można też
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/small_text_size"
                 android:text="@string/nazwa_leku"
                 android:id="@+id/TVname" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/small_text_size"
                 android:id="@+id/editText" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/small_text_size"
                 android:text="@string/godzina_przyjmowania_leku"
                 android:id="@+id/TVhour" />
 
@@ -46,7 +49,7 @@ trzeba było dodawać osobno tego samego leku o różnych godzinach. Można też
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/timePicker"
-                android:timePickerMode="spinner"/>
+                android:timePickerMode="spinner" />
 
             <ListView
                 android:id="@+id/listView"
@@ -54,13 +57,14 @@ trzeba było dodawać osobno tego samego leku o różnych godzinach. Można też
                 android:layout_height="201dp"
                 android:fadingEdge="none"
                 android:cacheColorHint="@null"
+                android:textSize="@dimen/small_text_size"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
 
                 <Button
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:text="@string/zapisz"
+                 android:text="@string/zapisz" android:textSize="@dimen/small_text_size"
                  android:id="@+id/Send"
                  android:layout_marginTop="24dp" />
 

@@ -11,8 +11,8 @@
 
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
         android:id="@+id/imageView"
         android:contentDescription="@string/image1"
         android:src="@mipmap/ic_launcher"
@@ -27,7 +27,7 @@
         android:contextClickable="false"
         android:elegantTextHeight="false"
         android:allowUndo="false"
-        android:textSize="30sp"
+        android:textSize="@dimen/big_text_size"
         android:layout_below="@+id/imageView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:text="@string/konto_opiekuna"
         android:id="@+id/user_guardian"
+        android:textSize="@dimen/small_text_size"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/today"
         android:layout_alignEnd="@+id/today"/>
@@ -47,7 +48,7 @@
         android:layout_height="wrap_content"
         android:text="@string/lista_lekow"
         android:id="@+id/lista"
-        android:textSize="30sp"
+        android:textSize="@dimen/big_text_size"
         android:layout_below="@+id/today"
         android:layout_alignRight="@+id/user_guardian"
         android:layout_alignEnd="@+id/user_guardian" />
@@ -57,7 +58,7 @@
         android:layout_height="wrap_content"
         android:text="@string/ustawienia"
         android:id="@+id/settings"
-        android:textSize="30sp"
+        android:textSize="@dimen/big_text_size"
         android:layout_below="@+id/lista"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -69,7 +70,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/nazwa_applikacji"
         android:id="@+id/textView5"
-        android:textSize="20sp"
+        android:textSize="@dimen/small_text_size"
         android:textColor="#606060"
         android:textStyle="italic"
         android:textAlignment="center"

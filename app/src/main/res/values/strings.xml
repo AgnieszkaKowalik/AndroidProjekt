@@ -38,5 +38,18 @@
     <string name="wziolem_lek">Wziołem lek</string>
     <string name="czy_wziety">Lek nie został wzięty</string>
     <string name="wersja_jezykowa">WERSJA JĘZYKOWA</string>
-    <string name="wyglad">WYGLĄD</string>
+    <string name="przed">przed posiłkiem</string>
+    <string name="wtrakcie">w trakcie posiłku</string>
+    <string name="twoj_pomocnik">Twój pomocnik</string>
+    <string name="po_posilku">po posiłku</string>
+    <string name="zapisano">Zapisano!</string>
+    <string name="blede_haslo">Błędne hasło</string>
+    <string name="wypelnione_pola">Wszystkie pola muszą być wypełnione</string>
+    <string name="inne_hasla">Wpisane hasła nie są takie same</string>
+    <string name="super_resjestracja">Rejestracja przebiegła pomyślnie, zaloguj się</string>
+    <string name="zaktualizowano">Zaktualizowano</string>
+    <string name="czy_chcesz_wyjsc">Czy na pewno chcesz wyjść?</string>
+    <string name="tak">Tak</string>
+    <string name="nie">Nie</string>
+    <string name="lek_wziety">Lek został wzięty</string>
 </resources>

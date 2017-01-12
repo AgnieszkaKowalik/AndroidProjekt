@@ -44,6 +44,10 @@ public class MedicinesList extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(view.getContext(),ShowMedicine.class);
+                if (medi.getMedName(i+1).equals("not found")) {
+                    i = i + 1;
+                }
+
                 String chosenMedName = medi.getMedName(i+1);
                 String chosenMedHour = medi.getMedHour(i+1);
                 String chosenMedMeal = medi.getMedMeal(i+1);

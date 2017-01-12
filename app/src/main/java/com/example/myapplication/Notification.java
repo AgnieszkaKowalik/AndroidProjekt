@@ -21,7 +21,7 @@ public class Notification extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //żeby nie było paska w nagłówku - do tego na początku jest extends Activity a nie AppCompatActivity
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_notification);
         context = this;
 
@@ -36,7 +36,7 @@ public class Notification extends Activity {
             @Override
             public void onClick(View v) {
                 // metoda która wypisuje tekst że lek został wzięty
-                set_text("Lek został wzięty");
+                set_text(getString(R.string.lek_wziety));
             }
 
 

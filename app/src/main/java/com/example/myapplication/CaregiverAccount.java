@@ -29,6 +29,7 @@ public class CaregiverAccount extends Activity {
             public void onClick(View v){
                 Intent intent = new Intent(CaregiverAccount.this,CaregiverRegister.class);
                 startActivity(intent);
+                finish();
             }
         });
         ButLogIn = (Button)findViewById(R.id.ButLogIn);
@@ -47,7 +48,7 @@ public class CaregiverAccount extends Activity {
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast temp = Toast.makeText(CaregiverAccount.this, "Błędne hasło", Toast.LENGTH_SHORT);
+                    Toast temp = Toast.makeText(CaregiverAccount.this, R.string.blede_haslo, Toast.LENGTH_SHORT);
                     temp.show();
                 }
             }

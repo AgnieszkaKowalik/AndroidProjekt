@@ -49,14 +49,14 @@ public class Medicament {
 
     // find medicament by id
 
-    public static Medicament findMedicamentById (String medId, MedsDatabase medi) {
+    public static Medicament findMedicamentById (int medId, MedsDatabase medi) {
         List<Medicament> meds = medi.getAllMeds();
         int i = 0;
         Medicament searchedMedicament = null;
         for (Medicament m : meds) {
-            String id = m.getId().toString();
+            Long id = m.getId();
             {
-                if (id.equals(medId)) {
+                if (id == medId) {
                     searchedMedicament = m;
                 }
             }

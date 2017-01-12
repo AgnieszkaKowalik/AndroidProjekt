@@ -28,7 +28,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/emptyString"
         android:id="@+id/TVusername"
-        android:textSize="25sp"
+        android:textSize="@dimen/small_text_size"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/TVhello"
         android:layout_toEndOf="@+id/TVhello" />
@@ -39,7 +39,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/co_chcial_bys_zrobic"
         android:id="@+id/TVwhat"
-        android:textSize="18sp"
+        android:textSize="@dimen/small_text_size"
         android:layout_below="@+id/TVhello"
         android:layout_centerHorizontal="true" />
 
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sprawdz_liste_lekow"
         android:id="@+id/Check"
-        android:textSize="22sp"
+        android:textSize="@dimen/small_text_size"
         android:layout_marginTop="89dp"
         android:layout_below="@+id/TVwhat"
         android:layout_alignParentLeft="true"
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:text="@string/dodaj_lek"
         android:id="@+id/Add"
-        android:textSize="22sp"
+        android:textSize="@dimen/small_text_size"
         android:layout_below="@+id/Check"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:text="@string/ustawienia_powiadomien"
         android:id="@+id/Alarms"
-        android:textSize="22sp"
+        android:textSize="@dimen/small_text_size"
         android:layout_below="@+id/Add"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

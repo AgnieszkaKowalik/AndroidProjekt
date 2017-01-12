@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/pills"
-        android:label="Twój pomocnik"
+        android:label="@string/twoj_pomocnik"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
