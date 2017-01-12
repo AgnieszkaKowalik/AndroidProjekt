@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TimePicker;
@@ -28,7 +29,7 @@ public class AddMedicine extends Activity {
     TimePicker time;
     Context context;
     AlarmManager am;
-    //String hour, minute, meal;
+    String hour, minute, meal;
     ListView lv;
     String[] mealArray = new String[] {getString(R.string.przed),getString(R.string.wtrakcie), getString(R.string.po_posilku)};
     PendingIntent pendingIntent;
