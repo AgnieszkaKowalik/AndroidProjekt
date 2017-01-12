@@ -29,16 +29,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CalendarView"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".Settings"
             android:configChanges="orientation"
             android:screenOrientation="portrait">

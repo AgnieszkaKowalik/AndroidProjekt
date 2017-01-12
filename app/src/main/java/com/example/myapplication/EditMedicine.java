@@ -17,6 +17,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class EditMedicine extends AppCompatActivity {
 
@@ -65,7 +66,7 @@ public class EditMedicine extends AppCompatActivity {
                 hour = time.getCurrentHour().toString();
                 minute = time.getCurrentMinute().toString();
 
-                if (time.getCurrentMinute()<10) {
+                if (time.getCurrentMinute() < 10) {
                     minute = "0" + time.getCurrentMinute().toString();
                 }
 
@@ -77,7 +78,8 @@ public class EditMedicine extends AppCompatActivity {
                 }
 
                 //edycja leku
-                Medicament medicament = new Medicament();
+                String MedId = getIntent().getExtras().getString("chosenId");
+                Medicament medicament = Medicament.findMedicamentById(MedId, medi);
                 medicament.setName(name.getText().toString());
                 medicament.setHour(hour + ":" + minute);
                 medicament.setMeal(meal);

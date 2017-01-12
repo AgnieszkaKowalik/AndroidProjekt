@@ -29,6 +29,7 @@ public class ShowMedicine extends Activity {
         bDelete = (Button) findViewById(R.id.bDelete);
         bCancel = (Button) findViewById(R.id.bCancel);
 
+        final String MedId = getIntent().getExtras().getString("chosenId");
         tvMedName.setText(getIntent().getExtras().getString("chosenName"));
         tvMedHours.setText(getIntent().getExtras().getString("chosenHour"));
         tvMedAddInfo.setText(getIntent().getExtras().getString("chosenMeal"));
@@ -39,6 +40,7 @@ public class ShowMedicine extends Activity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(ShowMedicine.this, EditMedicine.class);
+                intent.putExtra("chosenId", MedId);
                 startActivity(intent);
             }
         });

@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
-    public Button today, user_guardian, calendar, settings;
+    public Button today, user_guardian, list, settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +30,11 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-        calendar = (Button)findViewById(R.id.calendar); //przycisk "Kalendarz"
-        calendar.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
+        list = (Button)findViewById(R.id.lista); //przycisk "Lista Leków"
+        list.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, CalendarView.class);
+                Intent intent = new Intent(MainActivity.this, MedicinesList.class);
                 startActivity(intent);
             }
         });

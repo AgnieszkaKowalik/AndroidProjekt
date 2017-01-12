@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import java.util.List;
+
 /**
  * Created by Agata on 2016-11-12.
  */
@@ -42,6 +44,24 @@ public class Medicament {
 
     public void setMeal(String meal) {
         this.meal = meal;
+    }
+
+
+    // find medicament by id
+
+    public static Medicament findMedicamentById (String medId, MedsDatabase medi) {
+        List<Medicament> meds = medi.getAllMeds();
+        int i = 0;
+        Medicament searchedMedicament = null;
+        for (Medicament m : meds) {
+            String id = m.getId().toString();
+            {
+                if (id.equals(medId)) {
+                    searchedMedicament = m;
+                }
+            }
+        }
+        return searchedMedicament;
     }
 
 }

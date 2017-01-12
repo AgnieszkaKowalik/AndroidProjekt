@@ -79,6 +79,20 @@ public class MedsDatabase extends SQLiteOpenHelper {
         return meds; // zwracanie listy leków
     }
 
+    public String getMedIdByName (int name)
+    {
+        db=this.getReadableDatabase();
+        String query = "select "+ COLUMN_ID + " from "+TABLE_NAME + " where name=" + name;
+        Cursor cursor = db.rawQuery(query, null);
+        String medId="not found";
+        if (cursor.moveToFirst()){
+            do{
+                medId=cursor.getString(0);
+            }while(cursor.moveToNext());
+        }
+        return medId;
+    }
+
     public String getMedName(int i){
         db=this.getReadableDatabase();
         String query = "select "+ COLUMN_NAME + " from "+TABLE_NAME + " where id=" + i;
