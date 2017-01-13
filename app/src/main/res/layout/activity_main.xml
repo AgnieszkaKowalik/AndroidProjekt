@@ -41,7 +41,9 @@
         android:textSize="@dimen/small_text_size"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/today"
-        android:layout_alignEnd="@+id/today"/>
+        android:layout_alignEnd="@+id/today"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
 
     <Button
         android:layout_width="match_parent"

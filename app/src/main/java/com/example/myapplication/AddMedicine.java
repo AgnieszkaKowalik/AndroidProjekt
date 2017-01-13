@@ -31,7 +31,7 @@ public class AddMedicine extends Activity {
     AlarmManager am;
     String hour, minute, meal;
     ListView lv;
-    String[] mealArray = new String[] {getString(R.string.przed),getString(R.string.wtrakcie), getString(R.string.po_posilku)};
+    String[] mealArray;
     PendingIntent pendingIntent;
 
     @Override
@@ -42,6 +42,7 @@ public class AddMedicine extends Activity {
         this.context = this;
 
         am = (AlarmManager) getSystemService(ALARM_SERVICE);
+        mealArray = new String[] {getString(R.string.przed),getString(R.string.wtrakcie), getString(R.string.po_posilku)};
 
         name = (EditText)findViewById(R.id.editText);
         time = (TimePicker)findViewById(R.id.timePicker);

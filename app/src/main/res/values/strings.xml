@@ -24,7 +24,6 @@
     <string name="anuluj">ANULUJ</string>
     <string name="godzina_przyjmowania_leku">Godzina przyjmowania leku</string>
     <string name="zapisz">Zapisz</string>
-    <string name="kalendarz">KALENDARZ</string>
     <string name="nazwa_uzytkownika">Nazwa użytkownika:</string>
     <string name="haslo">Hasło:</string>
     <string name="zaloguj">ZALOGUJ</string>
@@ -35,7 +34,7 @@
     <string name="ustawienia">USTAWIENIA</string>
     <string name="nazwa_applikacji">Twój Farmaceutyczny Pomocnik</string>
     <string name="uwaga_wez_lek">Uwaga! Weź teraz lek:</string>
-    <string name="wziolem_lek">Wziołem lek</string>
+    <string name="wziolem_lek">Wziąłem lek</string>
     <string name="czy_wziety">Lek nie został wzięty</string>
     <string name="wersja_jezykowa">WERSJA JĘZYKOWA</string>
     <string name="przed">przed posiłkiem</string>
@@ -52,4 +51,5 @@
     <string name="tak">Tak</string>
     <string name="nie">Nie</string>
     <string name="lek_wziety">Lek został wzięty</string>
+    <string name="lista_lekow_w_na_dzis">Lista leków na dziś:</string>
 </resources>

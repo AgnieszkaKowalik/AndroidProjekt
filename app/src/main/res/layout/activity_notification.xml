@@ -12,6 +12,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_marginTop="60dp"
         android:text="@string/uwaga_wez_lek"
+        android:textSize="@dimen/small_text_size"
         android:id="@+id/tekst_info"
         android:layout_gravity="center_horizontal"
         android:singleLine="false" />
@@ -21,15 +22,16 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/nazwa_leku"
+        android:textSize="@dimen/small_text_size"
         android:id="@+id/nazwa_leku"
         android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
         android:text="@string/wziolem_lek"
         android:id="@+id/potwierdzenie"
+        android:textSize="@dimen/small_text_size"
         android:layout_marginTop="60dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.04" />
@@ -38,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/small_text_size"
         android:layout_marginTop="20dp"
         android:text="@string/czy_wziety"
         android:id="@+id/czy_wziety"
