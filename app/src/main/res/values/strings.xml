@@ -52,4 +52,5 @@
     <string name="nie">Nie</string>
     <string name="lek_wziety">Lek został wzięty</string>
     <string name="lista_lekow_w_na_dzis">Lista leków na dziś:</string>
+    <string name="usunieto">Usunięto</string>
 </resources>

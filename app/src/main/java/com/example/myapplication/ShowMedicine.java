@@ -46,7 +46,7 @@ public class ShowMedicine extends Activity {
             public void onClick(View view) {
                 medi.deleteMed(getIntent().getExtras().getInt("chosenId"));
                 Toast.makeText(getApplicationContext(),
-                        "Usunięto", Toast.LENGTH_SHORT).show();
+                        R.string.usunieto, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(ShowMedicine.this, MedicinesList.class));
             }
         });
