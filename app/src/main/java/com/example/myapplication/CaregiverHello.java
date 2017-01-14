@@ -20,7 +20,7 @@ public class CaregiverHello extends Activity {
         setContentView(R.layout.activity_caregiver_hello);
         String username = getIntent().getStringExtra("Username");
         TextView textView = (TextView)findViewById(R.id.TVusername);
-        textView.setText(username + ",");
+        textView.setText(" " + username + ",");
         init();
     }
 
