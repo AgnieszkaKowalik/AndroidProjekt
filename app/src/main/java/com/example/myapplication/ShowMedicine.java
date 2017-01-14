@@ -48,13 +48,15 @@ public class ShowMedicine extends Activity {
                 Toast.makeText(getApplicationContext(),
                         R.string.usunieto, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(ShowMedicine.this, MedicinesList.class));
+                finish();
             }
         });
 
         bCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ShowMedicine.this, MedicinesList.class));
+                //startActivity(new Intent(ShowMedicine.this, MedicinesList.class));
+                finish();
             }
         });
 

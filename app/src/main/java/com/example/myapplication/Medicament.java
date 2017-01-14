@@ -55,10 +55,8 @@ public class Medicament {
         Medicament searchedMedicament = null;
         for (Medicament m : meds) {
             Long id = m.getId();
-            {
-                if (id == medId) {
-                    searchedMedicament = m;
-                }
+            if (id == medId) {
+                searchedMedicament = m;
             }
         }
         return searchedMedicament;
