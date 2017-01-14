@@ -26,17 +26,20 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/nazwa_leku"
+                android:textSize="@dimen/small_text_size"
                 android:id="@+id/TVname" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/small_text_size"
                 android:id="@+id/editText" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="@dimen/small_text_size"
                 android:text="@string/godzina_przyjmowania_leku"
                 android:id="@+id/TVhour" />
 
@@ -44,6 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/timePicker"
+                android:textSize="@dimen/small_text_size"
                 android:timePickerMode="spinner"/>
 
             <ListView
@@ -51,19 +55,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="201dp"
                 android:fadingEdge="none"
+                android:textSize="@dimen/small_text_size"
                 android:cacheColorHint="@null"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/zapisz"
+                android:textSize="@dimen/small_text_size"
                 android:id="@+id/Send"
                 android:layout_marginTop="24dp" />
 

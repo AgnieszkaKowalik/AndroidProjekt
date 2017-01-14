@@ -10,7 +10,6 @@ public class Settings extends Activity {
 
     TextView settings;
     Button language;
-    Button look;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +18,5 @@ public class Settings extends Activity {
         setContentView(R.layout.activity_settings);
         settings = (TextView) findViewById(R.id.Settings);
         language = (Button) findViewById(R.id.LanguageVer);
-        look = (Button) findViewById(R.id.Look);
     }
 }

@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +16,6 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
-import java.util.List;
 
 public class EditMedicine extends AppCompatActivity {
 
@@ -25,20 +23,20 @@ public class EditMedicine extends AppCompatActivity {
     Button send;
     EditText name;
     TimePicker time;
-    Context context;
     AlarmManager am;
     String hour, minute, meal;
     ListView lv;
-    String[] mealArray = new String[] {"przed posiłkiem", "w trakcie posiłku", "po posiłku"};
+    String[] mealArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_medicine);
 
-        this.context = this;
-
+        int MedId = getIntent().getExtras().getInt("chosenId");
+        final Medicament medicament = Medicament.findMedicamentById(MedId, medi);
         am = (AlarmManager) getSystemService(ALARM_SERVICE);
+        mealArray = new String[] {getString(R.string.przed), getString(R.string.wtrakcie), getString(R.string.po_posilku)};
 
         name = (EditText)findViewById(R.id.editText);
         time = (TimePicker)findViewById(R.id.timePicker);
@@ -78,15 +76,13 @@ public class EditMedicine extends AppCompatActivity {
                 }
 
                 //edycja leku
-                String MedId = getIntent().getExtras().getString("chosenId");
-                Medicament medicament = Medicament.findMedicamentById(MedId, medi);
                 medicament.setName(name.getText().toString());
                 medicament.setHour(hour + ":" + minute);
                 medicament.setMeal(meal);
                 medi.updateMed(medicament);
 
                 Toast.makeText(getApplicationContext(),
-                        "Zaktualizowano", Toast.LENGTH_SHORT).show();
+                        R.string.zaktualizowano, Toast.LENGTH_SHORT).show();
 
                 startActivity(new Intent(EditMedicine.this, MedicinesList.class));
             }

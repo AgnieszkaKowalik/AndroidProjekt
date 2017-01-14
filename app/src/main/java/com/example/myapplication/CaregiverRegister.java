@@ -43,10 +43,10 @@ public class CaregiverRegister extends Activity {
         String pass1str = pass1.getText().toString();
         String pass2str = pass2.getText().toString();
         if (namestr.isEmpty() || phonestr.isEmpty() || unamestr.isEmpty() || pass1str.isEmpty()) {
-            Toast empty = Toast.makeText(this, "Wszystkie pola muszą być wypełnione", Toast.LENGTH_LONG);
+            Toast empty = Toast.makeText(this, R.string.wypelnione_pola, Toast.LENGTH_LONG);
             empty.show();
         } else if (!pass1str.equals(pass2str)){ //porównanie czy wpisane hasła są takie same - wyskakuje powiadomienie
-            Toast pass = Toast.makeText(this, "Wpisane hasła nie są takie same", Toast.LENGTH_SHORT );
+            Toast pass = Toast.makeText(this, R.string.inne_hasla, Toast.LENGTH_SHORT );
             pass.show();
         } else { //wrzucenie danych do bazy
             Contact c = new Contact();
@@ -57,11 +57,12 @@ public class CaregiverRegister extends Activity {
 
             helper.insertContact(c);
 
-            Toast toast = Toast.makeText(this, "Rejestracja przebiegła pomyślnie, zaloguj się", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, R.string.super_resjestracja, Toast.LENGTH_LONG);
             toast.show();
 
             Intent intent = new Intent(this, CaregiverAccount.class);
             startActivity(intent);
+            finish();
         }
     }
 }

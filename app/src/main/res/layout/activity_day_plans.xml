@@ -10,4 +10,24 @@
     tools:context="com.example.myapplication.DayPlans">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/lista_lekow_w_na_dzis"
+        android:id="@+id/textView2"
+        android:textSize="@dimen/small_text_size"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:id="@+id/lvMeds2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView2"
+        android:textSize="@dimen/small_text_size"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp" />
+
 </RelativeLayout>

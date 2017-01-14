@@ -17,12 +17,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvName"
         android:textStyle="bold"
-        android:textSize="25sp"/>
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:text=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/small_text_size"
         android:id="@+id/tvMedName" />
 
     <TextView
@@ -31,26 +32,28 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvHours"
         android:textStyle="bold"
-        android:textSize="25sp"/>
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:text=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/small_text_size"
         android:id="@+id/tvMedHours" />
 
     <TextView
         android:text="@string/dodatkowe_informacje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/small_text_size"
         android:id="@+id/tvAddInfo"
-        android:textStyle="bold"
-        android:textSize="25sp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:text=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/small_text_size"
         android:id="@+id/tvMedAddInfo" />
 
     <LinearLayout
@@ -61,6 +64,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:textSize="@dimen/small_text_size"
             android:text="@string/edytuj"
             android:id="@+id/bEdit"
             android:layout_weight="0.3"/>
@@ -69,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/usun"
+            android:textSize="@dimen/small_text_size"
             android:id="@+id/bDelete"
             android:layout_weight="0.3"/>
 
@@ -76,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/anuluj"
+            android:textSize="@dimen/small_text_size"
             android:id="@+id/bCancel"
             android:layout_weight="0.3"/>
     </LinearLayout>

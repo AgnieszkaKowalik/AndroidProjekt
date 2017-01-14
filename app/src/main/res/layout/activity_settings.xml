@@ -14,25 +14,17 @@
         android:layout_height="wrap_content"
         android:text="@string/wersja_jezykowa"
         android:id="@+id/LanguageVer"
+        android:textSize="@dimen/small_text_size"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/wyglad"
-        android:id="@+id/Look"
-        android:layout_below="@+id/LanguageVer"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="46dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/ustawienia"
+        android:textSize="@dimen/small_text_size"
         android:id="@+id/Settings"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />

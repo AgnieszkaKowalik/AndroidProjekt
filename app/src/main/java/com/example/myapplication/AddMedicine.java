@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TimePicker;
@@ -30,7 +31,7 @@ public class AddMedicine extends Activity {
     AlarmManager am;
     String hour, minute, meal;
     ListView lv;
-    String[] mealArray = new String[] {"przed posiłkiem", "w trakcie posiłku", "po posiłku"};
+    String[] mealArray;
     PendingIntent pendingIntent;
 
     @Override
@@ -41,6 +42,7 @@ public class AddMedicine extends Activity {
         this.context = this;
 
         am = (AlarmManager) getSystemService(ALARM_SERVICE);
+        mealArray = new String[] {getString(R.string.przed),getString(R.string.wtrakcie), getString(R.string.po_posilku)};
 
         name = (EditText)findViewById(R.id.editText);
         time = (TimePicker)findViewById(R.id.timePicker);
@@ -88,7 +90,7 @@ public class AddMedicine extends Activity {
                 medi.insertMed(newMed);
 
                 Toast.makeText(getApplicationContext(),
-                        "Zapisano!", Toast.LENGTH_SHORT).show();
+                        R.string.zapisano, Toast.LENGTH_SHORT).show();
 
                 // ustawianie powiadomienia dla leku
                 pendingIntent = PendingIntent.getBroadcast(AddMedicine.this, 0, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);

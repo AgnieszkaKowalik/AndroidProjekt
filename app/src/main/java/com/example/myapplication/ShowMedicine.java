@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,12 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ShowMedicine extends Activity {
-
-    final Context context = this;
     MedsDatabase medi = new MedsDatabase(this);
     TextView tvMedName, tvMedHours, tvMedAddInfo;
     Button bEdit, bDelete, bCancel;
-    String[] mealArray = new String[] {"przed posiłkiem", "w trakcie posiłku", "po posiłku"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +25,7 @@ public class ShowMedicine extends Activity {
         bDelete = (Button) findViewById(R.id.bDelete);
         bCancel = (Button) findViewById(R.id.bCancel);
 
-        final String MedId = getIntent().getExtras().getString("chosenId");
+        final int MedId = getIntent().getExtras().getInt("chosenId");
         tvMedName.setText(getIntent().getExtras().getString("chosenName"));
         tvMedHours.setText(getIntent().getExtras().getString("chosenHour"));
         tvMedAddInfo.setText(getIntent().getExtras().getString("chosenMeal"));
@@ -50,15 +46,17 @@ public class ShowMedicine extends Activity {
             public void onClick(View view) {
                 medi.deleteMed(getIntent().getExtras().getInt("chosenId"));
                 Toast.makeText(getApplicationContext(),
-                        "Usunięto", Toast.LENGTH_SHORT).show();
+                        R.string.usunieto, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(ShowMedicine.this, MedicinesList.class));
+                finish();
             }
         });
 
         bCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ShowMedicine.this, MedicinesList.class));
+                //startActivity(new Intent(ShowMedicine.this, MedicinesList.class));
+                finish();
             }
         });
 

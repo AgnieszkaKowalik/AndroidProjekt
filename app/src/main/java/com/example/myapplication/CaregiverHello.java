@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-//nie do końca działa - wyświetlanie username
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 
 public class CaregiverHello extends Activity {
 
-    Button medList, addNew, noti, change;
+    Button medList, addNew, noti;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
