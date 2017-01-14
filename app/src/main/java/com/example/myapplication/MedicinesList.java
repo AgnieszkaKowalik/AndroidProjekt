@@ -28,7 +28,7 @@ public class MedicinesList extends Activity {
         lvMeds = (ListView)findViewById(R.id.lvMeds);
 
         List<Medicament> meds= medi.getAllMeds();
-        String [] arrMeds = new String[meds.size()];
+        final String [] arrMeds = new String[meds.size()];
 
             int i=0;
             for(Medicament m:meds) {
@@ -44,18 +44,17 @@ public class MedicinesList extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(view.getContext(),ShowMedicine.class);
-                if (medi.getMedName(i+1).equals("not found")) {
-                    i = i + 1;
-                }
-
-                String chosenMedName = medi.getMedName(i+1);
-                String chosenMedHour = medi.getMedHour(i+1);
-                String chosenMedMeal = medi.getMedMeal(i+1);
-                intent.putExtra("chosenId", i+1);
+                String id;
+                String[] o = arrMeds[i].split(" "); // dziele string calej listy lekow na kawałki dotyczące pojedynczego leku o nr i na liscie lvMeds
+                id = o [0]; // na pozycji 0 jest wpisywane id
+                String chosenMedName = medi.getMedName(Integer.parseInt(id));
+                String chosenMedHour = medi.getMedHour(Integer.parseInt(id));
+                String chosenMedMeal = medi.getMedMeal(Integer.parseInt(id));
+                intent.putExtra("chosenId", Integer.parseInt(id));
                 intent.putExtra("chosenName", chosenMedName);
                 intent.putExtra("chosenHour", chosenMedHour);
                 intent.putExtra("chosenMeal", chosenMedMeal);
-                startActivity(intent);
+                startActivity(intent); //przekazanie parametrow leku do wyswietlenia
             }
         });
     }
