@@ -53,4 +53,9 @@
     <string name="lek_wziety">Lek został wzięty</string>
     <string name="lista_lekow_w_na_dzis">Lista leków na dziś:</string>
     <string name="usunieto">Usunięto</string>
+    <string name="wylacz_powiadomienia">Wyłącz powiadomienia</string>
+    <string name="ustaw_powiadomienie_dla_leku">Ustaw powiadomienie dla leku</string>
+    <string name="wlacz_powadomienia">Włącz powadomienia</string>
+    <string name="dawka_leku">Dawka leku</string>
+    <string name="posi_ek_leku">Posiłek leku</string>
 </resources>

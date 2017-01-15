@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    tools:context="com.example.myapplication.Notification">
+    tools:context=".Notify">
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,6 +25,24 @@
         android:textSize="@dimen/small_text_size"
         android:id="@+id/nazwa_leku"
         android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dawka_leku"
+        android:textSize="@dimen/small_text_size"
+        android:id="@+id/textView4"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/abc_background_cache_hint_selector_material_dark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/posi_ek_leku"
+        android:textSize="@dimen/small_text_size"
+        android:id="@+id/textView6"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/abc_background_cache_hint_selector_material_dark" />
 
     <Button
         android:layout_width="match_parent"

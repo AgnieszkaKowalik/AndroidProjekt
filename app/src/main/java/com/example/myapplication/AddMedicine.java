@@ -28,10 +28,12 @@ public class AddMedicine extends Activity {
     EditText name;
     TimePicker time;
     Context context;
-    AlarmManager am;
     String hour, minute, meal;
     ListView lv;
     String[] mealArray;
+
+    // do obsługi powiadomień
+    AlarmManager alarm;
     PendingIntent pendingIntent;
 
     @Override
@@ -41,7 +43,6 @@ public class AddMedicine extends Activity {
         setContentView(R.layout.activity_add_medicine);
         this.context = this;
 
-        am = (AlarmManager) getSystemService(ALARM_SERVICE);
         mealArray = new String[] {getString(R.string.przed),getString(R.string.wtrakcie), getString(R.string.po_posilku)};
 
         name = (EditText)findViewById(R.id.editText);
@@ -56,9 +57,12 @@ public class AddMedicine extends Activity {
 
         time.setIs24HourView(true); // format 24h
 
+
+        // do obsługi powiadomień
         final Calendar calendar = Calendar.getInstance();
 
-        final Intent my_intent = new Intent(this.context, Alarm.class);
+        alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
+        final Intent intent = new Intent(this.context, Alarm.class);
         send.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.M)
             @Override
@@ -92,9 +96,11 @@ public class AddMedicine extends Activity {
                 Toast.makeText(getApplicationContext(),
                         R.string.zapisano, Toast.LENGTH_SHORT).show();
 
-                // ustawianie powiadomienia dla leku
-                pendingIntent = PendingIntent.getBroadcast(AddMedicine.this, 0, my_intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                // do obsługi powiadomień
+                intent.putExtra("name",name.getText().toString() );
+                intent.putExtra("meal", meal);
+                pendingIntent = PendingIntent.getBroadcast(AddMedicine.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                alarm.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
 
                 finish();
             }

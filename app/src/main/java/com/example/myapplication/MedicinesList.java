@@ -45,7 +45,7 @@ public class MedicinesList extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(view.getContext(),ShowMedicine.class);
                 String id;
-                String[] o = arrMeds[i].split(" "); // dziele string calej listy lekow na kawałki dotyczące pojedynczego leku o nr i na liscie lvMeds
+                String[] o = arrMeds[i].split(" "); // wybieram string dotyczacy leku o nr i na liscie lvMeds
                 id = o [0]; // na pozycji 0 jest wpisywane id
                 String chosenMedName = medi.getMedName(Integer.parseInt(id));
                 String chosenMedHour = medi.getMedHour(Integer.parseInt(id));
