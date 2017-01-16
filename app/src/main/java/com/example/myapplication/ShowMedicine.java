@@ -26,6 +26,7 @@ public class ShowMedicine extends Activity {
         bCancel = (Button) findViewById(R.id.bCancel);
 
         final int MedId = getIntent().getExtras().getInt("chosenId");
+        final String name = getIntent().getExtras().getString("chosenName");
         tvMedName.setText(getIntent().getExtras().getString("chosenName"));
         tvMedHours.setText(getIntent().getExtras().getString("chosenHour"));
         tvMedAddInfo.setText(getIntent().getExtras().getString("chosenMeal"));
@@ -55,7 +56,6 @@ public class ShowMedicine extends Activity {
         bCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //startActivity(new Intent(ShowMedicine.this, MedicinesList.class));
                 finish();
             }
         });

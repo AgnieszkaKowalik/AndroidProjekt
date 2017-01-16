@@ -78,15 +78,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ustawienia_powiadomien"
-        android:id="@+id/Alarms"
-        android:textSize="@dimen/small_text_size"
-        android:layout_below="@+id/Add"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
 
 </RelativeLayout>

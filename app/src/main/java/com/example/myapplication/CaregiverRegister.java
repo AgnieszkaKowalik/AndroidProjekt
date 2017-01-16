@@ -25,7 +25,7 @@ public class CaregiverRegister extends Activity {
     }
 
     public void backToLoginOnClick(View view) {
-        Intent intent = new Intent(this, CaregiverAccount.class);
+        Intent intent = new Intent(this, CaregiverAccountActivity.class);
         startActivity(intent);
     }
 
@@ -60,7 +60,7 @@ public class CaregiverRegister extends Activity {
             Toast toast = Toast.makeText(this, R.string.super_resjestracja, Toast.LENGTH_LONG);
             toast.show();
 
-            Intent intent = new Intent(this, CaregiverAccount.class);
+            Intent intent = new Intent(this, CaregiverAccountActivity.class);
             startActivity(intent);
             finish();
         }

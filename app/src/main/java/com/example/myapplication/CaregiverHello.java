@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class CaregiverHello extends Activity {
 
-    Button medList, addNew, noti;
+    Button medList, addNew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,6 @@ public class CaregiverHello extends Activity {
     public void init(){
         medList = (Button)findViewById(R.id.Check);
         addNew = (Button)findViewById(R.id.Add);
-        noti = (Button)findViewById(R.id.Alarms);
 
         medList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,14 +38,7 @@ public class CaregiverHello extends Activity {
         addNew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CaregiverHello.this, AddMedicine.class);
-                startActivity(intent);
-            }
-        });
-        noti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CaregiverHello.this, NotificationSettings.class);
+                Intent intent = new Intent(CaregiverHello.this, AddMedicineActivity.class);
                 startActivity(intent);
             }
         });

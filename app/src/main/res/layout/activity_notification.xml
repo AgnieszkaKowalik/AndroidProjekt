@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    tools:context="com.example.myapplication.Notification">
+    tools:context=".Notify">
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,6 +26,14 @@
         android:id="@+id/nazwa_leku"
         android:layout_gravity="center_horizontal" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/posi_ek_leku"
+        android:textSize="@dimen/small_text_size"
+        android:id="@+id/posilek"
+        android:layout_gravity="center_horizontal" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,15 +43,5 @@
         android:layout_marginTop="60dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.04" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="@dimen/small_text_size"
-        android:layout_marginTop="20dp"
-        android:text="@string/czy_wziety"
-        android:id="@+id/czy_wziety"
-        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
