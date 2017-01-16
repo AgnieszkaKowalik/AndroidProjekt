@@ -10,10 +10,6 @@ public class Alarm extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-
-        String state = intent.getExtras().getString("extra");
-        Log.e("Czy uruchamiam", " " + state);
-
         String name = intent.getExtras().getString("name");
         Log.e("Nazwa leku", name);
 
@@ -21,7 +17,6 @@ public class Alarm extends BroadcastReceiver {
         Log.e("meal", meal);
 
         Intent serviceIntent = new Intent(context,RingtonePlayingService.class);
-        serviceIntent.putExtra("extra", state);
         serviceIntent.putExtra("name", name);
         serviceIntent.putExtra("meal", meal);
 

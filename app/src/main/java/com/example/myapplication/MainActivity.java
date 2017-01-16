@@ -34,23 +34,16 @@ public class MainActivity extends Activity {
         list.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, MedicinesList.class);
+                Intent intent = new Intent(MainActivity.this, PatientMedicineList.class);
                 startActivity(intent);
             }
         });
-        settings = (Button)findViewById(R.id.settings); //przycisk "Ustawienia"
-        settings.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, Settings.class);
-                startActivity(intent);
-            }
-        });
+
         user_guardian = (Button)findViewById(R.id.user_guardian); //przycisk "Konto opiekuna"
         user_guardian.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, CaregiverAccount.class);
+                Intent intent = new Intent(MainActivity.this, CaregiverAccountActivity.class);
                 startActivity(intent);
             }
         });

@@ -8,12 +8,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TimePicker;
@@ -21,7 +22,7 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class AddMedicine extends Activity {
+public class AddMedicineActivity extends Activity {
 
     MedsDatabase medi = new MedsDatabase(this);
     Button send;
@@ -55,11 +56,15 @@ public class AddMedicine extends Activity {
         lv.setAdapter(adapter);
         lv.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
+        lv.setItemChecked(0, true);
+        //lv.getSelectedView().setSelected(true);
+
         time.setIs24HourView(true); // format 24h
 
 
         // do obsługi powiadomień
         final Calendar calendar = Calendar.getInstance();
+        final Calendar c2 = Calendar.getInstance();
 
         alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
         final Intent intent = new Intent(this.context, Alarm.class);
@@ -77,6 +82,11 @@ public class AddMedicine extends Activity {
 
                 if (time.getCurrentMinute()<10) {
                     minute = "0" + time.getCurrentMinute().toString();
+                }
+
+                if (calendar.getTimeInMillis() < c2.getTimeInMillis())
+                {
+                    calendar.add(Calendar.DAY_OF_MONTH, 1);
                 }
 
                 SparseBooleanArray checked = lv.getCheckedItemPositions();
@@ -99,12 +109,29 @@ public class AddMedicine extends Activity {
                 // do obsługi powiadomień
                 intent.putExtra("name",name.getText().toString() );
                 intent.putExtra("meal", meal);
-                pendingIntent = PendingIntent.getBroadcast(AddMedicine.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                pendingIntent = PendingIntent.getBroadcast(AddMedicineActivity.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 alarm.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
 
                 finish();
             }
         });
 
+        name.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                send.setEnabled(!s.toString().trim().isEmpty());
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // TODO Auto-generated method stub
+            }
+        });
     }
 }

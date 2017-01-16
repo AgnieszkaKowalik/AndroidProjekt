@@ -55,16 +55,6 @@
         android:layout_alignRight="@+id/user_guardian"
         android:layout_alignEnd="@+id/user_guardian" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ustawienia"
-        android:id="@+id/settings"
-        android:textSize="@dimen/big_text_size"
-        android:layout_below="@+id/lista"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        />
 
     <TextView
         android:layout_width="match_parent"

@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class Notify extends Activity {
 
     TextView nazwa_leku;
-    TextView czy_wziety;
+    TextView posilek_leku;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +23,17 @@ public class Notify extends Activity {
         setContentView(R.layout.activity_notification);
 
         nazwa_leku = (TextView) findViewById(R.id.nazwa_leku);
-        czy_wziety = (TextView) findViewById(R.id.czy_wziety);
+        posilek_leku = (TextView) findViewById(R.id.posilek);
         Button potwierdzenie = (Button) findViewById(R.id.potwierdzenie);
 
+        nazwa_leku.setText(getIntent().getExtras().getString("name"));
+        posilek_leku.setText(getIntent().getExtras().getString("meal"));
 
         potwierdzenie.setOnClickListener(new View.OnClickListener()
         {
 
             @Override
             public void onClick(View v) {
-                // metoda która wypisuje tekst że lek został wzięty
-                //set_text(getString(R.string.lek_wziety));
                 Intent serviceIntent = new Intent(Notify.this, RingtonePlayingService.class);
                 Notify.this.stopService(serviceIntent);
                 finish();
@@ -41,9 +41,5 @@ public class Notify extends Activity {
 
 
         });
-    }
-
-    private void set_text(String s) {
-        czy_wziety.setText(s);
     }
 }

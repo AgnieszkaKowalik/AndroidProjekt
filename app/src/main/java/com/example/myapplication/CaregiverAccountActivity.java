@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class CaregiverAccount extends Activity {
+public class CaregiverAccountActivity extends Activity {
 
     Button ButSetAccount,ButLogIn;
     ContactsDatabase helper = new ContactsDatabase(this);
@@ -27,7 +27,7 @@ public class CaregiverAccount extends Activity {
         ButSetAccount.setOnClickListener(new View.OnClickListener(){ //przejście do nowej activity po kliknięciu
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(CaregiverAccount.this,CaregiverRegister.class);
+                Intent intent = new Intent(CaregiverAccountActivity.this,CaregiverRegister.class);
                 startActivity(intent);
                 finish();
             }
@@ -43,12 +43,12 @@ public class CaregiverAccount extends Activity {
 
                 String password = helper.searchPass(str);
                 if (pass.equals(password)) {
-                    Intent intent = new Intent(CaregiverAccount.this, CaregiverHello.class);
+                    Intent intent = new Intent(CaregiverAccountActivity.this, CaregiverHello.class);
                     intent.putExtra("Username",str); //wysyła nazwę uzytkownika do CaregiverHello, gdzie jest wywołane "Username" przez putExtra
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast temp = Toast.makeText(CaregiverAccount.this, R.string.blede_haslo, Toast.LENGTH_SHORT);
+                    Toast temp = Toast.makeText(CaregiverAccountActivity.this, R.string.blede_haslo, Toast.LENGTH_SHORT);
                     temp.show();
                 }
             }

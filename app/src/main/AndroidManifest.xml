@@ -29,17 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Settings"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".CaregiverAccount"
+            android:name=".CaregiverAccountActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -56,13 +46,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".CaregiverRegister" />
+        <activity android:name=".PatientMedicineList"/>
         <activity android:name=".CaregiverHello" />
         <activity android:name=".MedicinesList" />
-        <activity android:name=".AddMedicine" />
-        <activity android:name=".NotificationSettings" />
+        <activity android:name=".AddMedicineActivity" />
         <activity android:name=".ShowMedicine" />
         <activity android:name=".EditMedicine"></activity>
-        <activity android:name=".SetAlarm"></activity>
+
         <receiver android:name="Alarm"></receiver>
         <service android:name=".RingtonePlayingService"
             android:enabled="true"></service>
